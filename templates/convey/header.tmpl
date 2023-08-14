@@ -1,0 +1,12 @@
+{{define "header"}}
+{{range .Comments}}{{.}}
+{{end -}}
+package {{.Package}}
+
+import (
+{{range .Imports}}{{.Name}} {{.Path}}
+{{end}}
+    . "github.com/bytedance/mockey"
+    . "github.com/smartystreets/goconvey/convey"
+)
+{{end}}
